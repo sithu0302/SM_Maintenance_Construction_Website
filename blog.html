@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Owner's Blog | S.M. Maintenance & Construction Engineering</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Custom Blog Header Styling */
+    .custom-blog-header {
+      padding: 90px 0 60px;
+      background: linear-gradient(135deg, #0b1325 0%, #172a45 100%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      text-align: center;
+    }
+
+    .custom-blog-header .eyebrow {
+      color: #c5a880;
+      font-size: 13px;
+      letter-spacing: 2.5px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .custom-blog-header h1 {
+      font-size: 42px;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 1px;
+      color: #ffffff;
+      margin-bottom: 14px;
+      font-weight: 800;
+    }
+
+    .custom-blog-header p {
+      color: #a0aec0;
+      max-width: 580px;
+      margin: 0 auto;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* Article Grid & High Contrast White Cards */
+    .article-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+      padding: 60px 0;
+    }
+
+    /* photo සහිත Card එක */
+    .article-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    .article-card-img-wrap {
+      width: 100%;
+      height: 180px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .article-card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .article-card:hover .article-card-img-wrap img {
+      transform: scale(1.08);
+    }
+
+    .article-card-content {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .article-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 35px rgba(0, 0, 0, 0.22);
+      border-color: #c5a880;
+    }
+
+    .card-badge {
+      color: #0b1325;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      margin-bottom: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #f1f5f9;
+      padding: 5px 12px;
+      border-radius: 20px;
+      border: 1px solid #cbd5e1;
+      width: fit-content;
+    }
+
+    .article-card h3 {
+      color: #0f172a;
+      font-size: 18px;
+      line-height: 1.45;
+      margin-bottom: 12px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+    }
+
+    .article-card p {
+      color: #475569;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    /* Read Article Action Button */
+    .read-more-btn {
+      color: #0b1325;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+      margin-top: auto;
+      cursor: pointer;
+    }
+
+    .article-card:hover .read-more-btn {
+      background: #0b1325;
+      color: #ffffff;
+      border-color: #0b1325;
+    }
+
+    .read-more-btn i {
+      transition: transform 0.3s ease;
+    }
+
+    .article-card:hover .read-more-btn i {
+      transform: translateX(6px);
+      color: #c5a880;
+    }
+
+    /* Article Reader Pop-up Modal */
+    .article-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(11, 19, 37, 0.85);
+      backdrop-filter: blur(5px);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .article-modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: #ffffff;
+      color: #0f172a;
+      max-width: 700px;
+      width: 100%;
+      border-radius: 16px;
+      padding: 30px;
+      position: relative;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      max-height: 90vh;
+      overflow-y: auto;
+      animation: modalFadeIn 0.3s ease-out;
+    }
+
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      font-size: 18px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      color: #0f172a;
+      transition: all 0.2s ease;
+      z-index: 10;
+    }
+
+    .close-modal:hover {
+      background: #0b1325;
+      color: #ffffff;
+    }
+
+    .modal-banner-img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .modal-body h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 22px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      color: #0b1325;
+    }
+
+    .modal-body p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #334155;
+      margin-bottom: 15px;
+    }
+
+    .modal-body ul {
+      margin-bottom: 20px;
+      padding-left: 20px;
+    }
+
+    .modal-body li {
+      margin-bottom: 8px;
+      color: #334155;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+
+    .modal-cta {
+      margin-top: 25px;
+      padding-top: 20px;
+      border-top: 1px solid #e2e8f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .modal-cta-btn {
+      background: #0b1325;
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 13px;
+      transition: background 0.3s ease;
+    }
+
+    .modal-cta-btn:hover {
+      background: #c5a880;
+      color: #0b1325;
+    }
+
+    /* Footer Connect Icons Styling */
+    .footer-main div:nth-child(4) a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      transition: color 0.3s ease;
+    }
+
+    .footer-main div:nth-child(4) a:hover {
+      color: #c5a880;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="S.M. Maintenance & Construction Engineering home">
+        <span class="brand-mark">S.M.</span>
+        <span class="brand-copy"><strong>MAINTENANCE & CONSTRUCTION</strong><small>ENGINEERING</small></span>
+      </a>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="index.html#services">SERVICES</a>
+        <a href="index.html#packages">PACKAGES</a>
+        <a href="index.html#projects">PROJECTS</a>
+        <a href="index.html#videos">VIDEOS</a>
+        <a href="blog.html" class="active">ARTICLES</a>
+        <a href="team.html">TEAM</a>
+        <a href="careers.html">CAREERS</a>
+        <a href="index.html#contact">CONTACT</a>
+        <a class="nav-cta" href="index.html#contact">GET A QUOTE</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation"><span></span><span></span><span></span></button>
+    </div>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+      <a href="index.html">HOME</a>
+      <a href="about.html">ABOUT</a>
+      <a href="index.html#services">SERVICES</a>
+      <a href="index.html#packages">PACKAGES</a>
+      <a href="index.html#projects">PROJECTS</a>
+      <a href="index.html#videos">VIDEOS</a>
+      <a href="blog.html">ARTICLES</a>
+      <a href="team.html">TEAM</a>
+      <a href="careers.html">CAREERS</a>
+      <a href="index.html#contact">CONTACT</a>
+      <a class="mobile-cta" href="index.html#contact">GET A QUOTE</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Modern Hero Header -->
+    <section class="page-header custom-blog-header">
+      <div class="container">
+        <div class="eyebrow">INSIGHTS & GUIDES</div>
+        <h1>BLOGS</h1>
+        <p>Practical thinking, architectural insights, and useful frameworks for better home building in Sri Lanka.</p>
+      </div>
+    </section>
+
+    <!-- Enhanced High-Contrast Articles Grid with Images -->
+    <section class="section section-navy" id="articles">
+      <div class="container">
+        <div class="article-grid">
+          
+          <!-- Card 1 -->
+          <article class="article-card reveal">
+            <div class="article-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80" alt="House Planning">
+            </div>
+            <div class="article-card-content">
+              <div class="card-badge"><i class="fa-solid fa-compass"></i> PLANNING</div>
+              <h3>HOW TO PLAN YOUR HOUSE BEFORE CONSTRUCTION</h3>
+              <p>A practical starting framework for site selection, space allocation, budget estimation, and architectural decisions.</p>
+              <button class="read-more-btn" onclick="openArticle('planning')">READ ARTICLE <i class="fa-solid fa-arrow-right-long"></i></button>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="article-card reveal">
+            <div class="article-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80" alt="Construction Cost Planning">
+            </div>
+            <div class="article-card-content">
+              <div class="card-badge"><i class="fa-solid fa-calculator"></i> COST</div>
+              <h3>CONSTRUCTION COST PLANNING BASICS</h3>
+              <p>Understand scope management, material estimates, BOQ basics, and smart cost priorities before committing.</p>
+              <button class="read-more-btn" onclick="openArticle('cost')">READ ARTICLE <i class="fa-solid fa-arrow-right-long"></i></button>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="article-card reveal">
+            <div class="article-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="3D Architectural Rendering">
+            </div>
+            <div class="article-card-content">
+              <div class="card-badge"><i class="fa-solid fa-cube"></i> DESIGN</div>
+              <h3>WHY 3D VISUALIZATION IS IMPORTANT</h3>
+              <p>See how 3D exterior & interior rendering helps evaluate design ideas accurately before construction begins.</p>
+              <button class="read-more-btn" onclick="openArticle('design')">READ ARTICLE <i class="fa-solid fa-arrow-right-long"></i></button>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="article-card reveal">
+            <div class="article-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80" alt="Home Maintenance Tips">
+            </div>
+            <div class="article-card-content">
+              <div class="card-badge"><i class="fa-solid fa-screwdriver-wrench"></i> MAINTENANCE</div>
+              <h3>ESSENTIAL HOME MAINTENANCE TIPS</h3>
+              <p>Simple routine planning habits and structural maintenance tips to preserve property value over time.</p>
+              <button class="read-more-btn" onclick="openArticle('maintenance')">READ ARTICLE <i class="fa-solid fa-arrow-right-long"></i></button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Article Pop-Up Lightbox Modal -->
+  <div class="article-modal" id="articleModal">
+    <div class="modal-content">
+      <button class="close-modal" onclick="closeArticle()"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-body" id="modalBody">
+        <!-- Dynamic Content Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer section-dark">
+    <div class="container footer-main">
+      <div>
+        <a class="brand footer-brand" href="index.html">
+          <span class="brand-mark">S.M.</span>
+          <span class="brand-copy"><strong>MAINTENANCE & CONSTRUCTION</strong><small>ENGINEERING</small></span>
+        </a>
+        <p>Kegalle, Sri Lanka<br>Smart design. Strong construction. Lasting quality.</p>
+      </div>
+      <div>
+        <h4>NAVIGATION</h4>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="team.html">Team</a>
+        <a href="careers.html">Careers</a>
+        <a href="blog.html">Articles</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div>
+        <h4>SERVICES</h4>
+        <a href="index.html#services">House Plan Design</a>
+        <a href="index.html#services">3D Visualization</a>
+        <a href="index.html#services">Construction</a>
+        <a href="index.html#services">Renovation</a>
+        <a href="index.html#services">Maintenance</a>
+      </div>
+      <div>
+        <h4>CONNECT</h4>
+        <a href="https://wa.me/94718814959" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+        <a href="https://www.facebook.com/share/1MMUBPjNof/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+        <a href="https://www.tiktok.com/@.sm.construction?_r=1&_t=ZS-99L9sHJ87HA" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2026 S.M. Maintenance and Construction Engineering. All Rights Reserved.</span>
+      <span>KEGALLE / SRI LANKA</span>
+    </div>
+  </footer>
+
+  <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+
+  <!-- JavaScript for Modal Popup Content handling -->
+  <script>
+    const articlesData = {
+      planning: {
+        badge: "01 / PLANNING",
+        title: "HOW TO PLAN YOUR HOUSE BEFORE CONSTRUCTION",
+        image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80",
+        content: `
+          <p>Planning a house requires balancing space requirements, terrain conditions, and personal budget limits. Before starting architectural drawings, keep these key steps in mind:</p>
+          <ul>
+            <li><strong>Site Analysis & Orientation:</strong> Evaluate natural sunlight, rainwater flow, wind direction, and soil stability at your land before finalizing floor layouts.</li>
+            <li><strong>Functional Space Planning:</strong> Design rooms around your lifestyle habits rather than focusing purely on large square footage. Avoid wastage in wide corridors.</li>
+            <li><strong>Local Authority Approvals:</strong> Verify street line setbacks, building line clearances, and local municipal regulations early to prevent legal stalls.</li>
+            <li><strong>Future Expansion Provisions:</strong> Plan column structures and plumbing networks so that adding a upper floor later becomes seamless.</li>
+          </ul>
+          <p>Proper pre-construction planning prevents costly structural modifications mid-way through your build.</p>
+        `
+      },
+      cost: {
+        badge: "02 / COST",
+        title: "CONSTRUCTION COST PLANNING BASICS",
+        image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
+        content: `
+          <p>Unexpected budget overruns are common in Sri Lanka when building without a clear Bill of Quantities (BOQ). Protect your financial plan with these steps:</p>
+          <ul>
+            <li><strong>Detailed BOQ Estimates:</strong> Obtain itemized material quantities for concrete, rebar, masonry, and finishing work prior to starting.</li>
+            <li><strong>Material Price Contingency:</strong> Always set aside a 10% contingency buffer to accommodate inflation in steel, cement, and timber prices.</li>
+            <li><strong>Stage-wise Milestone Budgeting:</strong> Divide your funds into key stages: Substructure (Foundation), Superstructure (Frame/Slab), Masonry/Roofing, and Finishing.</li>
+            <li><strong>Quality vs. Cost Balance:</strong> Invest heavily in structural integrity (Foundation/Concrete) while choosing mid-tier options for customizable elements like light fixtures.</li>
+          </ul>
+        `
+      },
+      design: {
+        badge: "03 / DESIGN",
+        title: "WHY 3D VISUALIZATION IS IMPORTANT",
+        image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+        content: `
+          <p>2D floor plans provide dimensions, but 3D photorealistic renderings allow you to experience your house visually before laying a single brick.</p>
+          <ul>
+            <li><strong>Eliminate Miscommunications:</strong> Ensure your vision matches the site engineer's build plan seamlessly.</li>
+            <li><strong>Color & Material Testing:</strong> Preview various exterior paint combinations, tile finishes, wall cladding, and roof angles realistically.</li>
+            <li><strong>Lighting & Natural Sun Angle Checks:</strong> Visualize how natural sunlight enters living rooms and bedrooms during morning and evening hours.</li>
+            <li><strong>Prevents On-site Demolitions:</strong> Spot aesthetic mismatches early on screen rather than breaking constructed walls on site later.</li>
+          </ul>
+        `
+      },
+      maintenance: {
+        badge: "04 / MAINTENANCE",
+        title: "ESSENTIAL HOME MAINTENANCE TIPS",
+        image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80",
+        content: `
+          <p>A house requires ongoing preventive care to maintain structural durability, especially with Sri Lanka's heavy monsoon weather patterns.</p>
+          <ul>
+            <li><strong>Roof & Gutter Inspections:</strong> Clear leaves, silt, and debris from roof gutters twice a year before heavy monsoon rains to avoid roof overflows.</li>
+            <li><strong>Waterproofing Integrity Checks:</strong> Inspect concrete slab tops, bathroom tile sealants, and exterior walls regularly for hairline dampness cracks.</li>
+            <li><strong>Termite Prevention Measures:</strong> Conduct routine inspections on timber door frames, trusses, and baseboards to catch infestations early.</li>
+            <li><strong>Exterior Wall Repainting:</strong> Apply weather-shield exterior paint every 4–5 years to protect masonry brickwork against humidity.</li>
+          </ul>
+        `
+      }
+    };
+
+    function openArticle(key) {
+      const data = articlesData[key];
+      if (data) {
+        document.getElementById('modalBody').innerHTML = `
+          <img src="${data.image}" alt="${data.title}" class="modal-banner-img">
+          <div class="card-badge"><i class="fa-solid fa-book-open"></i> ${data.badge}</div>
+          <h2>${data.title}</h2>
+          ${data.content}
+          <div class="modal-cta">
+            <span>Need engineering guidance for your project?</span>
+            <a href="index.html#contact" class="modal-cta-btn">Consult Engineering Team ↗</a>
+          </div>
+        `;
+        document.getElementById('articleModal').classList.add('active');
+      }
+    }
+
+    function closeArticle() {
+      document.getElementById('articleModal').classList.remove('active');
+    }
+
+    // Close modal when clicking outside of the content box
+    window.onclick = function(event) {
+      const modal = document.getElementById('articleModal');
+      if (event.target === modal) {
+        closeArticle();
+      }
+    };
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

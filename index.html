@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Professional house plan design, 3D visualization, construction, renovation and maintenance services in Kegalle, Sri Lanka.">
+  <meta name="keywords" content="S.M. Maintenance, Construction Kegalle, House Plans Kegalle, Architectural Design Kegalle, 3D House Design Sri Lanka, Construction Company Kegalle, House Construction Sri Lanka, Renovation Kegalle, Maintenance Services Kegalle">
+  <meta name="author" content="S.M. Maintenance & Construction Engineering">
+  <meta property="og:title" content="S.M. Maintenance & Construction Engineering | Kegalle">
+  <meta property="og:description" content="Smart design. Strong construction. Lasting quality.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/home/background.jpg">
+  <title>S.M. Maintenance & Construction Engineering | Kegalle</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- සියලුම වීඩියෝ එක සමාන compact size එකෙන් තැබීමට අදාළ styles -->
+  <style>
+    #videos .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    #videos .video-card {
+      width: 100%;
+      margin: 0 auto;
+    }
+    #videos .video-frame {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #000;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    #videos .video-frame video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="S.M. Maintenance & Construction Engineering home">
+        <span class="brand-mark">S.M.</span>
+        <span class="brand-copy"><strong>MAINTENANCE & CONSTRUCTION</strong><small>ENGINEERING</small></span>
+      </a>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="index.html#services">SERVICES</a>
+        <a href="index.html#packages">PACKAGES</a>
+        <a href="index.html#projects">PROJECTS</a>
+        <a href="index.html#videos">VIDEOS</a>
+        <a href="blog.html">ARTICLES</a>
+        <a href="team.html">TEAM</a>
+        <a href="careers.html">CAREERS</a>
+        <a href="index.html#contact">CONTACT</a>
+        <a class="nav-cta" href="index.html#contact">GET A QUOTE</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation"><span></span><span></span><span></span></button>
+    </div>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+      <a href="index.html">HOME</a>
+      <a href="about.html">ABOUT</a>
+      <a href="index.html#services">SERVICES</a>
+      <a href="index.html#packages">PACKAGES</a>
+      <a href="index.html#projects">PROJECTS</a>
+      <a href="index.html#videos">VIDEOS</a>
+      <a href="blog.html">ARTICLES</a>
+      <a href="team.html">TEAM</a>
+      <a href="careers.html">CAREERS</a>
+      <a href="index.html#contact">CONTACT</a>
+      <a class="mobile-cta" href="index.html#contact">GET A QUOTE</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section-dark" id="home">
+      <div class="hero-bg"></div><div class="blueprint-grid"></div>
+      <div class="container hero-content">
+        <div class="eyebrow reveal">KEGALLE • SRI LANKA • EST. 2015</div>
+        <h1 class="reveal">BUILDING YOUR VISION<br><em>CREATING YOUR FUTURE</em></h1>
+        <p class="hero-tag reveal">Smart Design. <span>Strong Construction.</span> Lasting Quality.</p>
+        <p class="hero-desc reveal">Professional house planning, architectural design, 3D visualization, construction, renovation and maintenance solutions for modern living.</p>
+        <div class="hero-actions reveal"><a class="btn btn-primary" href="#contact">START YOUR PROJECT <span>↗</span></a><a class="btn btn-outline" href="#projects">EXPLORE PROJECTS <span>→</span></a></div>
+        <div class="hero-stats reveal"><div><strong>2015</strong><span>ESTABLISHED</span></div><div><strong>08</strong><span>SERVICES</span></div><div><strong>10</strong><span>TEAM ROLES</span></div></div>
+      </div>
+      <div class="hero-composition" aria-label="Architecture and construction project image composition">
+        <img src="assets/home/hero.jpg" alt="Modern residential construction project">
+        <img loading="lazy" src="assets/home/blueprint.jpg" alt="Architectural house plan and technical drawing">
+        <img loading="lazy" src="assets/home/construction.jpg" alt="Residential construction project in progress">
+      </div>
+      <div class="scroll-cue">SCROLL TO EXPLORE <span>↓</span></div>
+    </section>
+
+    <section class="section section-navy" id="services">
+      <div class="container"><div class="section-heading reveal"><div class="eyebrow">01 / CAPABILITIES</div><h2>Complete solutions<br><em>for your project.</em></h2><p>From first sketch to finished space, our services connect architectural thinking with practical construction.</p></div>
+        <div class="service-grid">
+         <!-- Service 01 -->
+<article class="service-card reveal">
+  <span class="service-no">01</span>
+  <span class="tech-icon">⌂</span>
+  <h3>HOUSE PLAN DESIGN</h3>
+  <p>Functional, site-aware residential planning shaped around your lifestyle and requirements.</p>
+  <a href="#contact" class="discuss-btn" data-service="House Plan Design">DISCUSS SERVICE <span>↗</span></a>
+</article>
+
+<!-- Service 02 -->
+<article class="service-card reveal">
+  <span class="service-no">02</span>
+  <span class="tech-icon">◇</span>
+  <h3>3D EXTERIOR VISUALIZATION</h3>
+  <p>Realistic exterior concepts that help you understand the final architectural character before construction.</p>
+  <a href="#contact" class="discuss-btn" data-service="3D Visualization">DISCUSS SERVICE <span>↗</span></a>
+</article>
+
+<!-- Service 03 -->
+<article class="service-card reveal">
+  <span class="service-no">03</span>
+  <span class="tech-icon">▧</span>
+  <h3>CONSTRUCTION</h3>
+  <p>Quality-focused execution with practical coordination from drawings through handover.</p>
+  <a href="#contact" class="discuss-btn" data-service="Construction">DISCUSS SERVICE <span>↗</span></a>
+</article>
+
+<!-- Service 04 -->
+<article class="service-card reveal">
+  <span class="service-no">04</span>
+  <span class="tech-icon">＋</span>
+  <h3>RENOVATION</h3>
+  <p>Thoughtful upgrades that improve function, appearance and long-term value.</p>
+  <a href="#contact" class="discuss-btn" data-service="Renovation">DISCUSS SERVICE <span>↗</span></a>
+</article>
+
+<!-- Service 05 -->
+<article class="service-card reveal">
+  <span class="service-no">05</span>
+  <span class="tech-icon">⚙</span>
+  <h3>MAINTENANCE</h3>
+  <p>Property repair and maintenance support designed around practical priorities.</p>
+  <a href="#contact" class="discuss-btn" data-service="Maintenance">DISCUSS SERVICE <span>↗</span></a>
+</article>
+
+<!-- Service 06 -->
+<article class="service-card reveal">
+  <span class="service-no">06</span>
+  <span class="tech-icon">◎</span>
+  <h3>PROJECT CONSULTATION</h3>
+  <p>Clear guidance for decisions involving planning, design, construction and improvements.</p>
+  <a href="#contact" class="discuss-btn" data-service="Consultation">DISCUSS SERVICE <span>↗</span></a>
+</article>
+
+<!-- Service 07 -->
+<article class="service-card reveal">
+  <span class="service-no">07</span>
+  <span class="tech-icon">▱</span>
+  <h3>LAND & SURVEY PLANS</h3>
+  <p>Technical plan support for property planning and documentation requirements.</p>
+  <a href="#contact" class="discuss-btn" data-service="House Plan Design">DISCUSS SERVICE <span>↗</span></a>
+</article>
+
+<!-- Service 08 -->
+<article class="service-card reveal">
+  <span class="service-no">08</span>
+  <span class="tech-icon">▤</span>
+  <h3>BOQ & CONSTRUCTION DOCUMENTATION</h3>
+  <p>Organized project documentation to support informed construction decisions.</p>
+  <a href="#contact" class="discuss-btn" data-service="Consultation">DISCUSS SERVICE <span>↗</span></a>
+</article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light" id="packages">
+      <div class="container"><div class="section-heading centered reveal"><div class="eyebrow">02 / SERVICE PATHS</div><h2>Choose the right starting point.</h2><p>No fixed prices. Every project receives a tailored <strong>custom quote</strong> based on scope and requirements.</p></div>
+        <div class="package-grid">
+          <article class="package-card reveal"><span>PACKAGE 01</span><h3>DESIGN STARTER</h3><ul><li>Initial consultation</li><li>Concept floor plan</li><li>Basic elevation</li><li>Design discussion</li></ul><div class="package-foot"><strong>CUSTOM QUOTE</strong><a href="#contact">GET QUOTE →</a></div></article>
+          <article class="package-card featured reveal"><span>PACKAGE 02</span><h3>HOUSE DESIGN PRO</h3><ul><li>Architectural planning</li><li>Detailed house plans</li><li>Elevations</li><li>3D exterior visualization</li><li>Design revisions</li></ul><div class="package-foot"><strong>CUSTOM QUOTE</strong><a href="#contact">GET QUOTE →</a></div></article>
+          <article class="package-card reveal"><span>PACKAGE 03</span><h3>DESIGN + BUILD</h3><ul><li>Design consultation</li><li>Planning & drawings</li><li>Construction coordination</li><li>Quality-focused execution</li></ul><div class="package-foot"><strong>CUSTOM QUOTE</strong><a href="#contact">GET QUOTE →</a></div></article>
+          <article class="package-card reveal"><span>PACKAGE 04</span><h3>PROPERTY CARE</h3><ul><li>Property assessment</li><li>Repair planning</li><li>Maintenance work</li><li>Improvement solutions</li></ul><div class="package-foot"><strong>CUSTOM QUOTE</strong><a href="#contact">GET QUOTE →</a></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark projects-section" id="projects">
+      <div class="container">
+        <div class="projects-top reveal"><div><div class="eyebrow">03 / PORTFOLIO</div><h2>Projects that speak<br><em>through detail.</em></h2></div><p>Explore a scalable project library designed for 12, 50 or 500+ future projects. Each project has its own multi-photo gallery.</p></div>
+        <div class="filter-row" id="projectFilters" role="tablist" aria-label="Project categories">
+          <button class="filter-btn active" data-filter="all">ALL</button><button class="filter-btn" data-filter="house-plans">HOUSE PLANS</button><button class="filter-btn" data-filter="3d-visualization">3D VISUALIZATION</button><button class="filter-btn" data-filter="construction">CONSTRUCTION</button><button class="filter-btn" data-filter="renovation">RENOVATION</button><button class="filter-btn" data-filter="maintenance">MAINTENANCE</button>
+        </div>
+        <div class="project-grid" id="projectGrid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section section-light" id="videos">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div class="eyebrow">04 / PROJECT VIDEOS</div>
+          <h2>See the work<br><em>in motion.</em></h2>
+        </div>
+        <div class="video-grid">
+          <article class="video-card reveal">
+            <div class="video-frame"><video controls preload="metadata"><source src="assets/videos/1.mp4" type="video/mp4"></video></div>
+            <span>01 / PROJECT WALKTHROUGH</span><h3>Gampola Ejancy book Shop</h3>
+          </article>
+          <article class="video-card reveal">
+            <div class="video-frame"><video controls preload="metadata"><source src="assets/videos/2.mp4" type="video/mp4"></video></div>
+            <span>02 / 3D HOUSE DESIGN</span><h3>3D House Design</h3>
+          </article>
+          <article class="video-card reveal">
+            <div class="video-frame"><video controls preload="metadata"><source src="assets/videos/3.mp4" type="video/mp4"></video></div>
+            <span>03 / 3D HOUSE DESIGN</span><h3>Interior Design</h3>
+          </article>
+          <article class="video-card reveal">
+            <div class="video-frame"><video controls preload="metadata"><source src="assets/videos/4.mp4" type="video/mp4"></video></div>
+            <span>04 / 3D House Design</span><h3>EXTERIER DESIGN</h3>
+          </article>
+          <article class="video-card reveal">
+            <div class="video-frame"><video controls preload="metadata"><source src="assets/videos/5.mp4" type="video/mp4"></video></div>
+            <span>05 / DESIGN BOOK</span><h3>Home Design Project Book</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light process-section">
+      <div class="container"><div class="section-heading centered reveal"><div class="eyebrow">06 / OUR PROCESS</div><h2>From idea to<br><em>handover.</em></h2></div>
+        <div class="process-timeline">
+          <article class="process-step reveal"><span>01</span><div><h3>CONSULTATION</h3><p>Understand your site, goals, requirements and priorities.</p></div></article>
+          <article class="process-step reveal"><span>02</span><div><h3>DESIGN</h3><p>Develop practical concepts, plans, elevations and visual direction.</p></div></article>
+          <article class="process-step reveal"><span>03</span><div><h3>PLANNING</h3><p>Prepare documentation and coordinate the project scope.</p></div></article>
+          <article class="process-step reveal"><span>04</span><div><h3>CONSTRUCTION & HANDOVER</h3><p>Coordinate execution toward a quality-focused completed space.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section section-navy" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-intro reveal">
+          <div class="eyebrow">07 / CONTACT</div>
+          <h2>LET'S DISCUSS<br><em>YOUR PROJECT.</em></h2>
+          <p>Tell us what you are planning. We can start with the scope, site, design requirements and the right next step.</p>
+          
+          <div class="contact-details">
+            <div><span>PHONE / WHATSAPP</span><strong>+94 718814959</strong></div>
+            <div><span>EMAIL</span><strong>janith.dileepa18@gmail.com</strong></div>
+            <div><span>LOCATION</span><strong>Kegalle, Sri Lanka</strong></div>
+          </div>
+          
+          <div class="socials">
+            <a href="https://wa.me/94718814959" target="_blank" rel="noopener noreferrer">WA</a>
+            <a href="https://www.facebook.com/share/1MMUBPjNof/" target="_blank" rel="noopener noreferrer">FB</a>
+            <a href="https://www.tiktok.com/@.sm.construction?_r=1&_t=ZS-99L9sHJ87HA" target="_blank" rel="noopener noreferrer">TK</a>
+          </div>
+        </div>
+        
+        <form class="form-panel light-panel reveal" id="contactForm" novalidate>
+          <div class="form-title">
+            <span>PROJECT ENQUIRY</span>
+            <h3>What are you building?</h3>
+          </div>
+
+          <div class="form-group">
+            <label for="formName">YOUR NAME</label>
+            <input id="formName" name="name" placeholder="John Doe" required type="text" autocomplete="name">
+          </div>
+
+          <div class="form-group">
+            <label for="formPhone">PHONE NUMBER</label>
+            <input id="formPhone" name="phone" placeholder="+94 7X XXX XXXX" required type="tel" autocomplete="tel">
+          </div>
+
+          <div class="form-group">
+            <label for="formEmail">EMAIL ADDRESS</label>
+            <input id="formEmail" name="email" placeholder="example@domain.com" required type="email" autocomplete="email">
+          </div>
+
+          <div class="form-group">
+            <label for="formService">SELECT SERVICE</label>
+            <select id="formService" name="service">
+              <option>House Plan Design</option>
+              <option>3D Visualization</option>
+              <option>Construction</option>
+              <option>Renovation</option>
+              <option>Maintenance</option>
+              <option>Consultation</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="formMessage">PROJECT DETAILS</label>
+            <textarea id="formMessage" name="message" placeholder="Tell us about your project, site location, timeline..." required rows="5"></textarea>
+          </div>
+
+          <button class="btn btn-primary" type="submit">SEND ENQUIRY <span>↗</span></button>
+          <div class="form-status" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+
+    <!-- 
+    <div class="map-placeholder reveal">
+      <div>
+        <span>GOOGLE MAPS PLACEHOLDER</span>
+        <strong>KEGALLE, SRI LANKA</strong>
+        <p>Replace this panel with the company's Google Maps embed/link when the final location is supplied.</p>
+      </div>
+      <div class="map-grid"></div>
+    </div> 
+    -->
+  </main>
+
+  <footer class="footer section-dark">
+    <div class="container footer-main">
+      <div><a class="brand footer-brand" href="index.html"><span class="brand-mark">S.M.</span><span class="brand-copy"><strong>MAINTENANCE & CONSTRUCTION</strong><small>ENGINEERING</small></span></a><p>Kegalle, Sri Lanka<br>Smart design. Strong construction. Lasting quality.</p></div>
+      <div><h4>NAVIGATION</h4><a href="index.html">Home</a><a href="about.html">About</a><a href="index.html#services">Services</a><a href="index.html#projects">Projects</a><a href="team.html">Team</a><a href="careers.html">Careers</a><a href="blog.html">Articles</a><a href="index.html#contact">Contact</a></div>
+      <div><h4>SERVICES</h4><a href="index.html#services">House Plan Design</a><a href="index.html#services">3D Visualization</a><a href="index.html#services">Construction</a><a href="index.html#services">Renovation</a><a href="index.html#services">Maintenance</a></div>
+      <div>
+        <h4>CONNECT</h4>
+        <a href="https://wa.me/94718814959" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a href="https://www.facebook.com/share/1MMUBPjNof/" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://www.tiktok.com/@.sm.construction?_r=1&_t=ZS-99L9sHJ87HA" target="_blank" rel="noopener noreferrer">TikTok</a>
+      </div>
+    </div>
+    <div class="container footer-bottom"><span>© 2026 S.M. Maintenance and Construction Engineering. All Rights Reserved.</span><span>KEGALLE / SRI LANKA</span></div>
+  </footer>
+
+  <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle" aria-hidden="true">
+    <div class="lightbox-backdrop" data-close></div>
+    <div class="lightbox-shell">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close project gallery">×</button>
+      <div class="lightbox-media"><button class="gallery-arrow prev" id="galleryPrev" aria-label="Previous image">←</button><img id="lightboxImage" src="" alt=""><button class="gallery-arrow next" id="galleryNext" aria-label="Next image">→</button></div>
+      <div class="lightbox-info"><div><span id="lightboxMeta"></span><h2 id="lightboxTitle"></h2><p id="lightboxDescription"></p></div><div class="gallery-counter" id="galleryCounter"></div></div>
+      <div class="thumbs" id="lightboxThumbs"></div>
+      <div class="project-nav"><button id="projectPrev">← PREVIOUS PROJECT</button><button id="projectNext">NEXT PROJECT →</button></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

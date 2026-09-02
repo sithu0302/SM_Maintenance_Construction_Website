@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Careers & Training | S.M. Maintenance & Construction Engineering</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ONLY Application Form is White */
+    .form-panel-custom {
+      background-color: #ffffff !important;
+      color: #1a202c !important;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      border: 1px solid #e2e8f0;
+    }
+    .form-panel-custom h3, 
+    .form-panel-custom .form-title span {
+      color: #0f172a !important;
+    }
+    .form-panel-custom label {
+      color: #334155 !important;
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: block;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+    }
+    .form-panel-custom input, 
+    .form-panel-custom select, 
+    .form-panel-custom textarea {
+      background-color: #f8fafc !important;
+      color: #0f172a !important;
+      border: 1px solid #cbd5e1 !important;
+      border-radius: 6px;
+      padding: 12px 14px;
+      width: 100%;
+      box-sizing: border-box;
+      font-family: inherit;
+      transition: all 0.2s ease;
+    }
+    .form-panel-custom input:focus, 
+    .form-panel-custom select:focus, 
+    .form-panel-custom textarea:focus {
+      outline: none;
+      border-color: #0284c7 !important;
+      background-color: #ffffff !important;
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+    }
+    
+    /* Red Note Style */
+    .form-note-red {
+      font-size: 0.85rem;
+      color: #ef4444 !important; /* Bright Red */
+      font-weight: 600;
+      margin-top: 5px;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+
+    /* Styled Buttons inside Form */
+    .btn-action-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 15px;
+    }
+    .btn-email-submit {
+      background-color: #0f172a;
+      color: #ffffff;
+      border: none;
+      padding: 14px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+    .btn-email-submit:hover {
+      background-color: #1e293b;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
+    }
+    .btn-whatsapp-submit {
+      background-color: #25D366;
+      color: #ffffff;
+      border: none;
+      padding: 14px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+    .btn-whatsapp-submit:hover {
+      background-color: #20ba5a;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="S.M. Maintenance & Construction Engineering home">
+        <span class="brand-mark">S.M.</span>
+        <span class="brand-copy"><strong>MAINTENANCE & CONSTRUCTION</strong><small>ENGINEERING</small></span>
+      </a>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="index.html#services">SERVICES</a>
+        <a href="index.html#packages">PACKAGES</a>
+        <a href="index.html#projects">PROJECTS</a>
+        <a href="index.html#videos">VIDEOS</a>
+        <a href="blog.html">ARTICLES</a>
+        <a href="team.html">TEAM</a>
+        <a href="careers.html">CAREERS</a>
+        <a href="index.html#contact">CONTACT</a>
+        <a class="nav-cta" href="index.html#contact">GET A QUOTE</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation"><span></span><span></span><span></span></button>
+    </div>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+      <a href="index.html">HOME</a>
+      <a href="about.html">ABOUT</a>
+      <a href="index.html#services">SERVICES</a>
+      <a href="index.html#packages">PACKAGES</a>
+      <a href="index.html#projects">PROJECTS</a>
+      <a href="index.html#videos">VIDEOS</a>
+      <a href="blog.html">ARTICLES</a>
+      <a href="team.html">TEAM</a>
+      <a href="careers.html">CAREERS</a>
+      <a href="index.html#contact">CONTACT</a>
+      <a class="mobile-cta" href="index.html#contact">GET A QUOTE</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1>CAREERS & TRAINING</h1>
+        <p>Build your career with S.M. Maintenance & Construction Engineering.</p>
+      </div>
+    </section>
+
+    <!-- Main Navy Section Restored -->
+    <section class="section careers-section section-navy" id="careers">
+      <div class="container">
+        <div class="split careers-head reveal">
+          
+        </div>
+
+        <div class="career-layout">
+          <!-- All 11 Open Positions List -->
+          <div class="career-list">
+            <article class="career-item reveal"><span>01</span><div><h3>TRAINEE DRAFTSPERSON</h3><p>Architectural drawings, CAD support and learning.</p></div><button class="apply-position" data-position="Trainee Draftsperson">APPLY NOW ↗</button></article>
+            <article class="career-item reveal"><span>02</span><div><h3>TRAINEE SUPERVISOR</h3><p>On-site execution, coordination and quality support.</p></div><button class="apply-position" data-position="Trainee Supervisor">APPLY NOW ↗</button></article>
+            <article class="career-item reveal"><span>03</span><div><h3>DRAFTSPERSON</h3><p>Detailed architectural & structural plan drafting.</p></div><button class="apply-position" data-position="Draftsperson">APPLY NOW ↗</button></article>
+            <article class="career-item reveal"><span>04</span><div><h3>TECHNICAL OFFICER (TO)</h3><p>Site management, technical coordination and measurements.</p></div><button class="apply-position" data-position="Technical Officer">APPLY NOW ↗</button></article>
+            <article class="career-item reveal"><span>05</span><div><h3>QUANTITY SURVEYOR (QS)</h3><p>BOQ preparation, material estimations and costing.</p></div><button class="apply-position" data-position="Quantity Surveyor (QS)">APPLY NOW ↗</button></article>
+            <article class="career-item reveal"><span>06</span><div><h3>STRUCTURAL ENGINEER</h3><p>Structural designs, analysis and site verification.</p></div><button class="apply-position" data-position="Structural Engineer">APPLY NOW ↗</button></article>
+            <article class="career-item reveal"><span>07</span><div><h3>ELECTRICAL & MECHANICAL ENGINEER</h3><p>MEP planning, service layout designs and execution.</p></div><button class="apply-position" data-position="Electrical & Mechanical Engineer">APPLY NOW ↗</button></article>
+            <article class="career-item reveal"><span>08</span><div><h3>STORE KEEPER</h3><p>Inventory control, site material receiving and issuing.</p></div><button class="apply-position" data-position="Store Keeper">APPLY NOW ↗</button></article>
+            <article class="career-item reveal"><span>09</span><div><h3>ASSISTANT ACCOUNTANT</h3><p>Handling bookkeeping, invoices and daily accounts.</p></div><button class="apply-position" data-position="Assistant Accountant">APPLY NOW ↗</button></article>
+            <article class="career-item reveal"><span>10</span><div><h3>ACCOUNTANT</h3><p>Financial management, payroll and compliance.</p></div><button class="apply-position" data-position="Accountant">APPLY NOW ↗</button></article>
+            <article class="career-item reveal"><span>11</span><div><h3>DOCUMENT OFFICER</h3><p>Filing, client correspondence and office documentation.</p></div><button class="apply-position" data-position="Document Officer">APPLY NOW ↗</button></article>
+          </div>
+          
+          <!-- Modern White Application Form ONLY -->
+          <form class="form-panel form-panel-custom reveal" id="careerForm">
+            <div class="form-title">
+              <span style="color: #64748b; font-weight: 700;">APPLICATION</span>
+              <h3 style="margin-top: 4px; font-size: 1.5rem;">Start the conversation.</h3>
+            </div>
+            
+            <label>FULL NAME<input id="formName" name="name" required type="text" autocomplete="name" placeholder="John Doe"></label>
+            <label>PHONE NUMBER<input id="formPhone" name="phone" required type="tel" autocomplete="tel" placeholder="07X XXXXXXX"></label>
+            <label>EMAIL<input id="formEmail" name="email" required type="email" autocomplete="email" placeholder="example@gmail.com"></label>
+            
+            <label>POSITION APPLYING FOR
+              <select id="formPosition" name="position" required>
+                <option value="">Select position</option>
+                <option value="Trainee Draftsperson">Trainee Draftsperson</option>
+                <option value="Trainee Supervisor">Trainee Supervisor</option>
+                <option value="Draftsperson">Draftsperson</option>
+                <option value="Technical Officer">Technical Officer</option>
+                <option value="Quantity Surveyor (QS)">Quantity Surveyor (QS)</option>
+                <option value="Structural Engineer">Structural Engineer</option>
+                <option value="Electrical & Mechanical Engineer">Electrical & Mechanical Engineer</option>
+                <option value="Store Keeper">Store Keeper</option>
+                <option value="Assistant Accountant">Assistant Accountant</option>
+                <option value="Accountant">Accountant</option>
+                <option value="Document Officer">Document Officer</option>
+              </select>
+            </label>
+
+            <label>WORK TYPE
+              <select id="formWorkType" name="workType" required>
+                <option value="">Select work type</option>
+                <option value="Full-time">Full-Time (පූර්ණ කාලීන)</option>
+                <option value="Part-time">Part-Time (අර්ධ කාලීන)</option>
+              </select>
+            </label>
+
+            <label>EXPECTED SALARY (LKR / Month)<input id="formSalary" name="salary" type="text" placeholder="e.g. LKR 60,000 / Negotiable" required></label>
+
+            <label>QUALIFICATION / EXPERIENCE<input id="formQualification" name="qualification" required type="text" placeholder="e.g. NVQ Level 5 / 2 Years Experience"></label>
+            
+            <label>MESSAGE / NOTES<textarea id="formMessage" name="message" rows="3" placeholder="Briefly describe yourself..."></textarea></label>
+            
+            <!-- Red Note -->
+            <p class="form-note-red">
+              * Note: Please attach your CV when WhatsApp or Email opens.
+            </p>
+
+            <div class="btn-action-group">
+              <button class="btn-email-submit" type="button" onclick="sendViaEmail()">
+                APPLY VIA EMAIL <span>↗</span>
+              </button>
+              <button class="btn-whatsapp-submit" type="button" onclick="sendViaWhatsApp()">
+                APPLY VIA WHATSAPP <span>↗</span>
+              </button>
+            </div>
+            
+            <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer section-dark">
+    <div class="container footer-main">
+      <div><a class="brand footer-brand" href="index.html"><span class="brand-mark">S.M.</span><span class="brand-copy"><strong>MAINTENANCE & CONSTRUCTION</strong><small>ENGINEERING</small></span></a><p>Kegalle, Sri Lanka<br>Smart design. Strong construction. Lasting quality.</p></div>
+      <div><h4>NAVIGATION</h4><a href="index.html">Home</a><a href="about.html">About</a><a href="index.html#services">Services</a><a href="index.html#projects">Projects</a><a href="team.html">Team</a><a href="careers.html">Careers</a><a href="blog.html">Articles</a><a href="index.html#contact">Contact</a></div>
+      <div><h4>SERVICES</h4><a href="index.html#services">House Plan Design</a><a href="index.html#services">3D Visualization</a><a href="index.html#services">Construction</a><a href="index.html#services">Renovation</a><a href="index.html#services">Maintenance</a></div>
+      <div>
+        <h4>CONNECT</h4>
+        <a href="https://wa.me/94718814959" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a href="https://www.facebook.com/share/1MMUBPjNof/" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://www.tiktok.com/@.sm.construction?_r=1&_t=ZS-99L9sHJ87HA" target="_blank" rel="noopener noreferrer">TikTok</a>
+      </div>
+    </div>
+    <div class="container footer-bottom"><span>© 2026 S.M. Maintenance and Construction Engineering. All Rights Reserved.</span><span>KEGALLE / SRI LANKA</span></div>
+  </footer>
+
+  <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+
+  <script>
+    // APPLY NOW Click Logic (Smooth Scroll & Auto Select)
+    document.addEventListener('DOMContentLoaded', () => {
+      const applyBtns = document.querySelectorAll('.apply-position');
+      const posSelect = document.getElementById('formPosition');
+      const careerForm = document.getElementById('careerForm');
+
+      if (applyBtns.length > 0 && posSelect && careerForm) {
+        applyBtns.forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            const pos = btn.getAttribute('data-position');
+            if (pos) {
+              posSelect.value = pos;
+            }
+            careerForm.scrollIntoView({ behavior: 'smooth' });
+          });
+        });
+      }
+    });
+
+    // Form Submission Helper Function
+    function getFormData() {
+      const name = document.getElementById('formName').value.trim();
+      const phone = document.getElementById('formPhone').value.trim();
+      const email = document.getElementById('formEmail').value.trim();
+      const position = document.getElementById('formPosition').value;
+      const workType = document.getElementById('formWorkType').value;
+      const salary = document.getElementById('formSalary').value.trim();
+      const qual = document.getElementById('formQualification').value.trim();
+      const msg = document.getElementById('formMessage').value.trim();
+
+      if (!name || !phone || !position || !workType || !salary) {
+        alert("Please fill all required fields before submitting.");
+        return null;
+      }
+
+      return { name, phone, email, position, workType, salary, qual, msg };
+    }
+
+    // WhatsApp Submit
+    function sendViaWhatsApp() {
+      const data = getFormData();
+      if (!data) return;
+
+      const text = `*NEW JOB APPLICATION - S.M. CONSTRUCTION*%0A%0A` +
+        `*Name:* ${encodeURIComponent(data.name)}%0A` +
+        `*Phone:* ${encodeURIComponent(data.phone)}%0A` +
+        `*Email:* ${encodeURIComponent(data.email)}%0A` +
+        `*Position:* ${encodeURIComponent(data.position)}%0A` +
+        `*Work Type:* ${encodeURIComponent(data.workType)}%0A` +
+        `*Expected Salary:* ${encodeURIComponent(data.salary)}%0A` +
+        `*Qualification/Exp:* ${encodeURIComponent(data.qual)}%0A` +
+        `*Message:* ${encodeURIComponent(data.msg)}%0A%0A` +
+        `_(I will attach my CV here)_`;
+
+      window.open(`https://wa.me/94718814959?text=${text}`, '_blank');
+    }
+
+    // Email Submit
+    function sendViaEmail() {
+      const data = getFormData();
+      if (!data) return;
+
+      const subject = encodeURIComponent(`Job Application: ${data.position} - ${data.name}`);
+      const body = encodeURIComponent(
+        `Full Name: ${data.name}\n` +
+        `Phone Number: ${data.phone}\n` +
+        `Email: ${data.email}\n` +
+        `Position Applied For: ${data.position}\n` +
+        `Work Type: ${data.workType}\n` +
+        `Expected Salary: ${data.salary}\n` +
+        `Qualifications/Experience: ${data.qual}\n` +
+        `Message: ${data.msg}\n\n` +
+        `* Please attach CV to this email.`
+      );
+
+      window.location.href = `mailto:janith.dileepa18@gmail.com?subject=${subject}&body=${body}`;
+    }
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
